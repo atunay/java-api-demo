@@ -33,5 +33,14 @@ public class JsonParser {
         String message = value.replace("\"", "");
         return message;
     }
+    public static String getUserName (String in) {
+        String[] json = in.split(",");
+        String data = json[5];
+        data = data.replace("}", "");
+        String[] key = data.split(":");
+        String value = key[1];
+        String userName = value.replace("\"", "");
+        return userName;
+    }
 
 }

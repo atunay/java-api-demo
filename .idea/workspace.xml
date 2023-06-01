@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc01cb65-29ea-4a20-94cb-da44cb1bf12f" name="Changes" comment="">
+    <list default="true" id="cefb9b07-897e-4951-8c48-f9b771f0babe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/AccessTokenHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/GetRequestsByID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/PostRequestSignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/GetRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/GetRequests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/PostRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/PostRequestsLogIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helpers/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helpers/JsonParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tests/RegistrationAndLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/RegistrationAndLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/UsersData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/UsersData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,17 +36,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2FOAy3kDp46ThORVm3teuai5atk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
+  <component name="ProjectId" id="2Q6fIGY7Xvgu0IHff8sfciEnVZE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,52 +46,53 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/webdrivers/apache.http/lib&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tunay/IdeaProjects/Mod4Pjct1Robo&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2850575&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.41944444&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\zdrav\Projects\JQA_homeworks\ZornitsaStefanova\java-api-demo\target\classes" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="tests" />
       <recent name="api" />
     </key>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Application.PostRequests">
-    <configuration name="PostRequests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="api.PostRequests" />
-=======
-  <component name="RunManager" selected="Application.ReadConfig">
-    <configuration name="ReadConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="helpers.ReadConfig" />
->>>>>>> 76cf2276ab22a38edffe61328d78ded56c2f633a
-      <module name="java-api-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="helpers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="api.GetRequests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.GetRequestsByID">
+    <configuration name="GetRequests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="api.GetRequests" />
       <module name="java-api-demo" />
       <extension name="coverage">
         <pattern>
+          <option name="PATTERN" value="api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetRequestsByID" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="api.GetRequestsByID" />
+      <module name="java-api-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="helpers.JsonParser" />
+      <module name="java-api-demo" />
+      <extension name="coverage">
+        <pattern>
           <option name="PATTERN" value="helpers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
@@ -98,37 +101,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistrationAndLogin" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PostRequestsLogIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="api.PostRequestsLogIn" />
       <module name="java-api-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RegistrationAndLogin" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegistrationAndLogin.testLogin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="java-api-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RegistrationAndLogin" />
-      <option name="METHOD_NAME" value="testLogin" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,42 +134,26 @@
     </configuration>
     <recent_temporary>
       <list>
-<<<<<<< HEAD
-        <item itemvalue="Application.PostRequests" />
-        <item itemvalue="Application.api.GetRequests" />
-        <item itemvalue="TestNG.RegistrationAndLogin" />
-        <item itemvalue="TestNG.RegistrationAndLogin.testLogin" />
-        <item itemvalue="Application.helpers.JsonParser" />
-=======
-        <item itemvalue="Application.ReadConfig" />
+        <item itemvalue="Application.GetRequestsByID" />
+        <item itemvalue="Application.PostRequestsLogIn" />
         <item itemvalue="TestNG.RegistrationAndLogin.testSuccessfulLogin" />
-        <item itemvalue="TestNG.RegistrationAndLogin" />
-        <item itemvalue="TestNG.RegistrationAndLogin.testLogin" />
-        <item itemvalue="Application.api.GetRequests" />
->>>>>>> 76cf2276ab22a38edffe61328d78ded56c2f633a
+        <item itemvalue="Application.GetRequests" />
+        <item itemvalue="Application.JsonParser" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cc01cb65-29ea-4a20-94cb-da44cb1bf12f" name="Changes" comment="" />
-      <created>1664348864461</created>
+      <changelist id="cefb9b07-897e-4951-8c48-f9b771f0babe" name="Changes" comment="" />
+      <created>1684678134527</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1664348864461</updated>
+      <updated>1684678134527</updated>
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

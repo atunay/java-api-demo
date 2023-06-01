@@ -1,29 +1,39 @@
 package api;
 
+import helpers.JsonParser;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+
 import java.io.IOException;
 import java.io.InputStream;
 
-public class GetRequests {
+public class GetRequestsByID {
 
-    private static String urlString = "http://restapi.adequateshop.com/api/users?page=10";
-    private static String accessToken;
-    private static String responseCode;
+    public static String urlString = "http://restapi.adequateshop.com/api/users/234178"; //"http://restapi.adequateshop.com/api/users/" + "234178";
+
+    private static String accessToken; // = PostRequestsLogIn.getAccessToken();
     private static String responseBody;
+    private static String responseCode;
 
 
     public static void main(String[] args) throws IOException {
-        accessToken = "0500336d-3cbe-4895-8893-37e129847a41";
+        //accessToken = "20642ea0-50b7-4440-a5aa-59a98890d629";
+        //accessToken = PostRequestsLogIn.getAccessToken(); //20642ea0-50b7-4440-a5aa-59a98890d629
+
+        accessToken = AccessTokenHolder.getAccessToken();
+
+
+       // String urlString = "http://restapi.adequateshop.com/api/users/234178"; //"http://restapi.adequateshop.com/api/users/" + "234178";
         HttpGet getUsers = new HttpGet(urlString);
         getUsers.setHeader("Content-type", "application/json");
         getUsers.setHeader("Authorization", "Bearer " + accessToken);
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpResponse response = httpClient.execute(getUsers);
         responseCode = response.getStatusLine().toString();
+
 
 
         //Parse the response body
@@ -40,10 +50,4 @@ public class GetRequests {
         System.out.println(accessToken);
 
     }
-    public static String getAccessToken() {
-
-        return accessToken;
-    }
-
-
 }

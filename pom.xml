@@ -44,6 +44,51 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.hqstevenson.splunk</groupId>
+            <artifactId>splunk.aries.blueprint</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hqstevenson.splunk</groupId>
+            <artifactId>splunk.aries.blueprint</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hqstevenson.splunk</groupId>
+            <artifactId>splunk.aries.blueprint</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hqstevenson.splunk</groupId>
+            <artifactId>splunk.aries.blueprint</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hqstevenson.splunk</groupId>
+            <artifactId>splunk.aries.blueprint</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hqstevenson.splunk</groupId>
+            <artifactId>splunk.aries.blueprint</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hqstevenson.splunk</groupId>
+            <artifactId>splunk.aries.blueprint</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hqstevenson.splunk</groupId>
+            <artifactId>splunk.aries.blueprint</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hqstevenson.splunk</groupId>
+            <artifactId>splunk.aries.blueprint</artifactId>
+            <version>2.1.2</version>
+        </dependency>
     </dependencies>
 
     <build>

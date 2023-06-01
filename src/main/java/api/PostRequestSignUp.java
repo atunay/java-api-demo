@@ -1,8 +1,5 @@
 package api;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 import helpers.JsonParser;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -11,34 +8,37 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 
-public class PostRequests {
+import java.io.IOException;
+import java.io.InputStream;
 
-    private static String loginUrl = "http://restapi.adequateshop.com/api/authaccount/login";
-    private static String responseCode;
-    private static String responseBody;
-    private static String accessToken;
-    private static String authMessage;
 
-    public static void main(String[] args) {
-        String email = "zdravko.zafirov+2@gmail.com";
-        String password = "123456";
-        try {
-            login(email, password);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        printAccessToken();
-    }
+public class PostRequestSignUp {
+private static final String SignUpURL = "http://restapi.adequateshop.com/api/authaccount/registration";
+private static String responseCode;
+private static String responseBody;
+private static String accessToken;
+private static String authMessage;
 
-    public static void login(String email, String password) throws IOException {
+ public static void main (String[] args) {
+     String name = "tuni";
+     String email = "a.tunay+3@gmail.com";
+     String password = "123456";
+     try {
+         signUp(name, email, password);
+     } catch (IOException e) {
+         throw new RuntimeException(e);
+     }
+     printAccessToken();
+ }
+    public static void signUp(String name, String email, String password) throws IOException {
         // Build the post request
-        String postBody = "{\"email\":\"" + email + "\", " + "\"password\":\"" + password + "\"}";
-        HttpPost postLogin = new HttpPost(loginUrl);
-        postLogin.setEntity(new StringEntity(postBody));
-        postLogin.setHeader("Content-type", "application/json");
+        String postBody = "{\"name\":\"" + name + "\", " + "\"password\":\"" + password + "\", " + "\"email\":\"" + email + "\"}";
+        HttpPost postSignUp = new HttpPost(SignUpURL);
+        postSignUp.setEntity(new StringEntity(postBody));
+        postSignUp.setHeader("Content-type", "application/json");
         HttpClient httpClient = HttpClientBuilder.create().build();
         // Execute the post request
-        HttpResponse response = httpClient.execute(postLogin);
+        HttpResponse response = httpClient.execute(postSignUp);
         responseCode = response.getStatusLine().toString();
         // Fill in the response body
         HttpEntity entity = response.getEntity();
@@ -60,23 +60,30 @@ public class PostRequests {
     }
 
     public static String getAccessToken() {
+
         return accessToken;
     }
 
     public static String getResponseCode() {
+
         return responseCode;
     }
 
     public static String getResponseBody() {
-        return responseCode;
+
+        return responseBody;
     }
 
     public static String getLoginMessage() {
+
         return authMessage;
     }
 
+
     public static void printAccessToken() {
+        System.out.println(responseCode);
+        System.out.println(authMessage);
+        System.out.println(responseBody);
         System.out.println(accessToken);
     }
-
 }
