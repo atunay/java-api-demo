@@ -42,5 +42,4 @@ public class JsonParser {
         String ID = value.replace("\"", "");
         return ID;
     }
-
 }

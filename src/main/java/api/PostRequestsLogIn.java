@@ -29,6 +29,9 @@ public class PostRequestsLogIn {
             throw new RuntimeException(e);
         }
         printAccessDetails();
+        //getID();
+        //AccessTokenHolder.setAccessToken(accessToken);
+        //IDHolder.setID(responseBody);
     }
 
     public static void login(String email, String password) throws IOException {
@@ -59,13 +62,16 @@ public class PostRequestsLogIn {
                 ID = json.getID(responseBody);
             }
         }
-        AccessTokenHolder.setAccessToken(accessToken);
+        //AccessTokenHolder.setAccessToken(accessToken);
+        System.out.println("A: " + accessToken);
+        //IDHolder.setID(ID);
+        System.out.println("B: " + ID);
     }
 
-   /* public static String getAccessToken() {
+    public static String getAccessToken() {
 
         return accessToken;
-    }*/
+    }
 
     public static String getResponseCode() {
 
