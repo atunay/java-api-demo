@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cefb9b07-897e-4951-8c48-f9b771f0babe" name="Changes" comment="Reconstructed project from assignment." />
+    <list default="true" id="cefb9b07-897e-4951-8c48-f9b771f0babe" name="Changes" comment="Reconstructed project from assignment.">
+      <change afterPath="$PROJECT_DIR$/.attach_pid42113" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/GetRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/GetRequests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/GetRequestsByID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/GetRequestsByID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/PostRequestsLogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/PostRequestsLogIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helpers/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helpers/JsonParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/RegistrationAndLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/RegistrationAndLogin.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +37,7 @@
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="c979d246-9f21-4591-9940-5f441d12b9dc" />
-        <option name="url" value="https://github.com/z-zafirov/java-api-demo.git" />
+        <option name="url" value="https://github.com/atunay/java-api-demo.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -138,8 +146,8 @@
         <item itemvalue="Application.GetRequestsByID" />
         <item itemvalue="Application.PostRequestsLogIn" />
         <item itemvalue="TestNG.RegistrationAndLogin.testSuccessfulLogin" />
-        <item itemvalue="Application.GetRequests" />
         <item itemvalue="Application.JsonParser" />
+        <item itemvalue="Application.GetRequests" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685636952454</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Reconstructed project from assignment.">
+      <created>1685637710724</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685637710724</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

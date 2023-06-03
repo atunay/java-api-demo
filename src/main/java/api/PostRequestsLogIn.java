@@ -18,6 +18,7 @@ public class PostRequestsLogIn {
     private static String responseBody;
     public static String accessToken;
     private static String authMessage;
+    private static String ID;
 
     public static void main(String[] args) {
         String email = "a.tunay+2@gmail.com";
@@ -55,12 +56,13 @@ public class PostRequestsLogIn {
             authMessage = json.getAuthMessage(responseBody);
             if (authCode.equals("0")) {
                 accessToken = json.getAccessToken(responseBody);
+                ID = json.getID(responseBody);
             }
         }
         AccessTokenHolder.setAccessToken(accessToken);
     }
 
-  /*  public static String getAccessToken() {
+   /* public static String getAccessToken() {
 
         return accessToken;
     }*/
@@ -79,13 +81,16 @@ public class PostRequestsLogIn {
 
         return authMessage;
     }
-
-    public static void printAccessDetails() {
-
-        System.out.println(responseCode);
-        System.out.println(authMessage);
-        System.out.println(responseBody);
-        System.out.println(accessToken);
+    public static String getID(){
+        return ID;
     }
 
+
+    public static void printAccessDetails() {
+        System.out.println("responseCode: " + responseCode);
+        System.out.println("authMessage: " + authMessage);
+        System.out.println("responseBody: " + responseBody);
+        System.out.println("accessToken: " + accessToken);
+        System.out.println("ID: " + ID);
+    }
 }

@@ -33,14 +33,14 @@ public class JsonParser {
         String message = value.replace("\"", "");
         return message;
     }
-    public static String getUserName (String in) {
+    public static String getID (String in) {
         String[] json = in.split(",");
-        String data = json[5];
+        String data = json[2];
         data = data.replace("}", "");
         String[] key = data.split(":");
-        String value = key[1];
-        String userName = value.replace("\"", "");
-        return userName;
+        String value = key[2];
+        String ID = value.replace("\"", "");
+        return ID;
     }
 
 }

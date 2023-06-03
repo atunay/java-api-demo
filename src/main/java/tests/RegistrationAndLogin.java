@@ -1,11 +1,14 @@
 package tests;
 
 import api.PostRequestsLogIn;
+import api.AccessTokenHolder;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+
+import static api.AccessTokenHolder.getAccessToken;
 
 public class RegistrationAndLogin {
 
@@ -30,8 +33,12 @@ public class RegistrationAndLogin {
         Assert.assertTrue(responseBody.contains("0"));
         Assert.assertTrue(responseBody.contains("234178")); //ID:234177
         Assert.assertTrue(responseBody.contains("tuni"));
-        //String accessToken = postRequests.getAccessToken();
-        //Assert.assertTrue(responseBody.contains(accessToken));
+
+
+
+
+        /*String accessToken = postRequests.getAccessToken();
+        Assert.assertTrue(responseBody.contains(accessToken));*/
     }
 
     @Test

@@ -17,10 +17,10 @@ public class GetRequests {
 
 
     public static void main(String[] args) throws IOException {
-        accessToken = "0500336d-3cbe-4895-8893-37e129847a41";
+        //accessToken = "335ef78f-0b21-4dcf-89f8-03928eb2d0a7";
         HttpGet getUsers = new HttpGet(urlString);
         getUsers.setHeader("Content-type", "application/json");
-        getUsers.setHeader("Authorization", "Bearer " + accessToken);
+        getUsers.setHeader("Authorization", "Bearer " + "335ef78f-0b21-4dcf-89f8-03928eb2d0a7");
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpResponse response = httpClient.execute(getUsers);
         responseCode = response.getStatusLine().toString();
