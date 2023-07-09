@@ -11,17 +11,19 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 
+import static api.IDHolder.ID;
+
 public class PostRequestsLogIn {
 
-    private static String loginUrl = "http://restapi.adequateshop.com/api/authaccount/login";
+    private static final String loginUrl = "http://restapi.adequateshop.com/api/authaccount/login";
     private static String responseCode;
     private static String responseBody;
     public static String accessToken;
     private static String authMessage;
-    private static String ID;
+    public static String ID;
 
     public static void main(String[] args) {
-        String email = "a.tunay+2@gmail.com";
+        String email = "a.tunay+8@gmail.com";
         String password = "123456";
         try {
             login(email, password);
@@ -29,9 +31,6 @@ public class PostRequestsLogIn {
             throw new RuntimeException(e);
         }
         printAccessDetails();
-        //getID();
-        //AccessTokenHolder.setAccessToken(accessToken);
-        //IDHolder.setID(responseBody);
     }
 
     public static void login(String email, String password) throws IOException {
@@ -62,14 +61,13 @@ public class PostRequestsLogIn {
                 ID = json.getID(responseBody);
             }
         }
-        //AccessTokenHolder.setAccessToken(accessToken);
+        AccessTokenHolder.setAccessToken(accessToken);
         System.out.println("A: " + accessToken);
-        //IDHolder.setID(ID);
+        IDHolder.setID(ID);
         System.out.println("B: " + ID);
     }
 
     public static String getAccessToken() {
-
         return accessToken;
     }
 

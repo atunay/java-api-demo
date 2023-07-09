@@ -1,7 +1,12 @@
 package tests;
 
+import api.PostRequestSignUp;
 import api.PostRequestsLogIn;
 import api.AccessTokenHolder;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -10,18 +15,44 @@ import java.io.IOException;
 
 import static api.AccessTokenHolder.getAccessToken;
 
+
 public class RegistrationAndLogin {
 
     private static String email;
     private static String password;
+    private static String name;
+    private static String accessToken;
+    //private static String accessToken = "Bearer 9bf089a7-9f68-48d3-99b2-23ba9c66416c";
+    private static String responseCode;
+    private static String responseBody;
+    protected static String urlString = "http://restapi.adequateshop.com/api/users?page=10";
+    //protected static String urlString = "http://restapi.adequateshop.com/api/users/ + 238536;
+    public static String ID;
 
     @BeforeTest
     public static void credentials() {
-        email = "a.tunay+2@gmail.com"; //a.tunay+1@gmail.com
+        name = "tuni";
+        email = "a.tunay+8@gmail.com";
         password = "123456";
     }
 
-    @Test
+    @Test(priority = 1)
+    public static void testSuccessfulSignUp() throws IOException {
+        PostRequestSignUp postRequests = new PostRequestSignUp();
+        postRequests.signUp(name, email, password);
+        String responseCode = postRequests.getResponseCode();
+        Assert.assertTrue(responseCode.contains("200"), responseCode);
+        String authMessage = postRequests.getLoginMessage();
+        Assert.assertTrue(authMessage.contains("success"), authMessage);
+        String responseBody = postRequests.getResponseBody();
+        Assert.assertTrue(responseBody.contains("0"));
+        accessToken = postRequests.getAccessToken();
+        System.out.println(accessToken);
+        Assert.assertTrue(responseBody.contains("tuni"));
+    }
+
+
+    @Test(priority = 2)
     public static void testSuccessfulLogin() throws IOException {
         PostRequestsLogIn postRequests = new PostRequestsLogIn();
         postRequests.login(email, password);
@@ -31,17 +62,13 @@ public class RegistrationAndLogin {
         Assert.assertTrue(authMessage.contains("success"), authMessage);
         String responseBody = postRequests.getResponseBody();
         Assert.assertTrue(responseBody.contains("0"));
-        Assert.assertTrue(responseBody.contains("234178")); //ID:234177
         Assert.assertTrue(responseBody.contains("tuni"));
+        accessToken = postRequests.getAccessToken();
 
-
-
-
-        /*String accessToken = postRequests.getAccessToken();
-        Assert.assertTrue(responseBody.contains(accessToken));*/
+        System.out.println(accessToken);
     }
 
-    @Test
+    @Test(priority = 3)
     public static void testWrongPassword() throws IOException {
         PostRequestsLogIn postRequests = new PostRequestsLogIn();
         postRequests.login(email, "123450");
@@ -53,7 +80,7 @@ public class RegistrationAndLogin {
         Assert.assertTrue(responseBody.contains("1"));
     }
 
-    @Test
+    @Test(priority = 4)
     public static void testWrongUsername() throws IOException {
         PostRequestsLogIn postRequests = new PostRequestsLogIn();
         postRequests.login("test@test.com", password);
@@ -64,5 +91,27 @@ public class RegistrationAndLogin {
         String responseBody = postRequests.getResponseBody();
         Assert.assertFalse(responseBody.contains("0"));
     }
+    @Test(priority = 5)
+    public static void testGetUsers() throws IOException {
+        PostRequestsLogIn postRequests = new PostRequestsLogIn();
+        postRequests.login(email, password);
+        HttpGet getUser = new HttpGet(urlString);
+        getUser.setHeader("Content-type", "application/json");
+        getUser.setHeader("Authorization", "Bearer " + accessToken);
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        HttpResponse response = httpClient.execute(getUser);
+        responseCode = response.getStatusLine().toString();
 
+        String responseCode = postRequests.getResponseCode();
+        Assert.assertTrue(responseCode.contains("200"), responseCode);
+        String authMessage = postRequests.getLoginMessage();
+        Assert.assertTrue(authMessage.contains("success"), authMessage);
+        String responseBody = postRequests.getResponseBody();
+        Assert.assertTrue(responseBody.contains("0"));
+        Assert.assertTrue(responseBody.contains("241964"));
+        Assert.assertTrue(responseBody.contains("tuni"));
+        accessToken = postRequests.getAccessToken();
+
+        System.out.println(accessToken);
+    }
 }

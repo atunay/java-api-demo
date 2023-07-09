@@ -10,17 +10,16 @@ import java.io.InputStream;
 
 public class GetRequests {
 
-    private static String urlString = "http://restapi.adequateshop.com/api/users?page=10";
-    private static String accessToken;
+    private static String urlString = "http://restapi.adequateshop.com/api/users?page=1";
     private static String responseCode;
     private static String responseBody;
 
 
     public static void main(String[] args) throws IOException {
-        //accessToken = "335ef78f-0b21-4dcf-89f8-03928eb2d0a7";
+        String accessToken = "ec97b1c2-0d4c-429c-993c-96f6b478d39d";
         HttpGet getUsers = new HttpGet(urlString);
         getUsers.setHeader("Content-type", "application/json");
-        getUsers.setHeader("Authorization", "Bearer " + "335ef78f-0b21-4dcf-89f8-03928eb2d0a7");
+        getUsers.setHeader("Authorization", "Bearer " + accessToken);
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpResponse response = httpClient.execute(getUsers);
         responseCode = response.getStatusLine().toString();
@@ -37,13 +36,5 @@ public class GetRequests {
 
         System.out.println(responseCode);
         System.out.println(responseBody);
-        System.out.println(accessToken);
-
     }
-    public static String getAccessToken() {
-
-        return accessToken;
-    }
-
-
 }

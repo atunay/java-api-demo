@@ -21,7 +21,7 @@ private static String authMessage;
 
  public static void main (String[] args) {
      String name = "tuni";
-     String email = "a.tunay+3@gmail.com";
+     String email = "a.tunay+8@gmail.com";
      String password = "123456";
      try {
          signUp(name, email, password);
