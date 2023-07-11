@@ -29,6 +29,7 @@ public class GetRequests {
         postRequest.login(readConfig.getUsername(), readConfig.getPassword());
         String accessToken = PostRequestsLogIn.getAccessToken();
 
+
         //String accessToken = "ec97b1c2-0d4c-429c-993c-96f6b478d39d";
         HttpGet getUsers = new HttpGet(urlString);
         getUsers.setHeader("Content-type", "application/json");

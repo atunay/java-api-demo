@@ -12,7 +12,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 
-import static api.IDHolder.ID;
+//import static api.IDHolder.ID;
 
 public class PostRequestsLogIn {
 
@@ -71,9 +71,9 @@ public class PostRequestsLogIn {
                 ID = json.getID(responseBody);
             }
         }
-        AccessTokenHolder.setAccessToken(accessToken);
+        //AccessTokenHolder.setAccessToken(accessToken);
         System.out.println("A: " + accessToken);
-        IDHolder.setID(ID);
+        //IDHolder.setID(ID);
         System.out.println("B: " + ID);
     }
 

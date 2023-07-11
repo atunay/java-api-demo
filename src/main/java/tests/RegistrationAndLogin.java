@@ -2,7 +2,7 @@ package tests;
 
 import api.PostRequestSignUp;
 import api.PostRequestsLogIn;
-import api.AccessTokenHolder;
+//import api.AccessTokenHolder;
 import helpers.ReadConfig;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-import static api.AccessTokenHolder.getAccessToken;
+//import static api.AccessTokenHolder.getAccessToken;
 
 
 public class RegistrationAndLogin {
