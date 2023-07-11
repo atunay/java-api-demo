@@ -1,6 +1,7 @@
 package api;
 
 import helpers.JsonParser;
+import helpers.ReadConfig;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -14,15 +15,28 @@ import java.io.InputStream;
 
 public class PostRequestSignUp {
 private static final String SignUpURL = "http://restapi.adequateshop.com/api/authaccount/registration";
+//private static String SignUpURL;
 private static String responseCode;
 private static String responseBody;
 private static String accessToken;
 private static String authMessage;
 
  public static void main (String[] args) {
-     String name = "tuni";
+     /*String name = "tuni";
      String email = "a.tunay+8@gmail.com";
-     String password = "123456";
+     String password = "123456";*/
+
+     ReadConfig readConfig = new ReadConfig();
+     readConfig.readConfigFile();
+
+
+     String qaEnv = readConfig.getQaEnv();
+     String email = readConfig.getUsername();
+     String password = readConfig.getPassword();
+     String name = readConfig.getName();
+     //SignUpURL = (qaEnv + "/authaccount/registration"); //ако е локална променлива,.теста не минава. Адреса е null???
+     //SignUpURL = (readConfig.getBaseUrl() + "/api/authaccount/registration");
+
      try {
          signUp(name, email, password);
      } catch (IOException e) {

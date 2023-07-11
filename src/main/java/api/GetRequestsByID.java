@@ -2,6 +2,7 @@ package api;
 
 
 import helpers.JsonParser;
+import helpers.ReadConfig;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -15,8 +16,8 @@ import java.io.InputStream;
 
 public class GetRequestsByID {
 
-    public static String urlString = ("http://restapi.adequateshop.com/api/users/"); //"http://restapi.adequateshop.com/api/users/" + "234178";
-
+    //public static String urlString = ("http://restapi.adequateshop.com/api/users/"); //"http://restapi.adequateshop.com/api/users/" + "234178";
+    public static String urlString;
     public static String accessToken = "ec97b1c2-0d4c-429c-993c-96f6b478d39d";
     private static String responseBody;
     private static String responseCode;
@@ -24,6 +25,13 @@ public class GetRequestsByID {
 
 
     public static void main(String[] args) throws IOException {
+
+        ReadConfig readConfig = new ReadConfig();
+        readConfig.readConfigFile();
+
+        String qaEnv = readConfig.getQaEnv();
+        urlString = (qaEnv + "/users/");
+
         HttpGet getUsers = new HttpGet(urlString + ID);
         getUsers.setHeader("Content-type", "application/json");
         getUsers.setHeader("Authorization", "Bearer " + accessToken);

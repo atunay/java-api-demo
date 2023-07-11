@@ -1,8 +1,8 @@
 package helpers;
 
 public class JsonParser {
-
-    public static void main(String[] args) {    }
+    public static void main(String[] args) {
+    }
 
     public static String getAccessToken(String in) {
         String[] json = in.split(",");

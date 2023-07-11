@@ -1,5 +1,6 @@
 package api;
 
+import helpers.ReadConfig;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -10,13 +11,25 @@ import java.io.InputStream;
 
 public class GetRequests {
 
-    private static String urlString = "http://restapi.adequateshop.com/api/users?page=1";
+    //private static String urlString = "http://restapi.adequateshop.com/api/users?page=1";
+    private static String urlString;
     private static String responseCode;
     private static String responseBody;
 
 
     public static void main(String[] args) throws IOException {
-        String accessToken = "ec97b1c2-0d4c-429c-993c-96f6b478d39d";
+
+        ReadConfig readConfig = new ReadConfig();
+        readConfig.readConfigFile();
+
+        String qaEnv = readConfig.getQaEnv();
+        urlString = (qaEnv + "/users?page=1");
+
+        PostRequestsLogIn postRequest = new PostRequestsLogIn();
+        postRequest.login(readConfig.getUsername(), readConfig.getPassword());
+        String accessToken = PostRequestsLogIn.getAccessToken();
+
+        //String accessToken = "ec97b1c2-0d4c-429c-993c-96f6b478d39d";
         HttpGet getUsers = new HttpGet(urlString);
         getUsers.setHeader("Content-type", "application/json");
         getUsers.setHeader("Authorization", "Bearer " + accessToken);

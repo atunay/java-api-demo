@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import helpers.JsonParser;
+import helpers.ReadConfig;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -16,15 +17,24 @@ import static api.IDHolder.ID;
 public class PostRequestsLogIn {
 
     private static final String loginUrl = "http://restapi.adequateshop.com/api/authaccount/login";
+    //private static String loginUrl;
     private static String responseCode;
     private static String responseBody;
     public static String accessToken;
     private static String authMessage;
     public static String ID;
 
+    public PostRequestsLogIn (){}
     public static void main(String[] args) {
-        String email = "a.tunay+8@gmail.com";
-        String password = "123456";
+        //String email = "a.tunay+8@gmail.com";
+        //String password = "123456";
+
+        ReadConfig readConfig = new ReadConfig();
+        readConfig.readConfigFile();
+        //loginUrl = (readConfig.getQaEnv() + "/authaccount/login");//new
+        String email = readConfig.getUsername();//new
+        String password = readConfig.getPassword();//new
+
         try {
             login(email, password);
         } catch (IOException e) {

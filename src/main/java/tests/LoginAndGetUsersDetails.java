@@ -1,6 +1,7 @@
 package tests;
 
 import api.PostRequestsLogIn;
+import helpers.ReadConfig;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -15,15 +16,26 @@ public class LoginAndGetUsersDetails {
     private static String email;
     private static String password;
     private static String accessToken;
-    protected static String urlString = "http://restapi.adequateshop.com/api/users?page=1";
+
+    //protected static String urlString = "http://restapi.adequateshop.com/api/users?page=1";
+    protected static String urlString;
 
     @BeforeTest
     public static void credentials() {
-        email = "a.tunay+8@gmail.com";
-        password = "123456";
+        //email = "a.tunay+8@gmail.com";
+        //password = "123456";
+
+        ReadConfig readConfig = new ReadConfig();
+        readConfig.readConfigFile();
+        email = readConfig.getUsername();
+        password = readConfig.getPassword();
+        String qaEnv = readConfig.getQaEnv();
+        urlString = (qaEnv + "/users?page=1");
+
+
     }
 
-    @Test(priority = 5)
+    @Test
     public static void testGetUsers() throws IOException {
         PostRequestsLogIn postRequests = new PostRequestsLogIn();
         postRequests.login(email, password);
@@ -41,8 +53,7 @@ public class LoginAndGetUsersDetails {
         Assert.assertTrue(responseBody.contains("0"));
         Assert.assertTrue(responseBody.contains("241964"));
         Assert.assertTrue(responseBody.contains("tuni"));
-        accessToken = postRequests.getAccessToken();
 
-        System.out.println(accessToken);
+        System.out.println(responseBody);
     }
 }

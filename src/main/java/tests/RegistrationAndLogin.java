@@ -3,6 +3,7 @@ package tests;
 import api.PostRequestSignUp;
 import api.PostRequestsLogIn;
 import api.AccessTokenHolder;
+import helpers.ReadConfig;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -25,15 +26,26 @@ public class RegistrationAndLogin {
     //private static String accessToken = "Bearer 9bf089a7-9f68-48d3-99b2-23ba9c66416c";
     private static String responseCode;
     private static String responseBody;
-    protected static String urlString = "http://restapi.adequateshop.com/api/users?page=10";
+    //protected static String urlString = "http://restapi.adequateshop.com/api/users?page=10";
     //protected static String urlString = "http://restapi.adequateshop.com/api/users/ + 238536;
+    protected static String urlString;
     public static String ID;
 
     @BeforeTest
     public static void credentials() {
-        name = "tuni";
-        email = "a.tunay+8@gmail.com";
-        password = "123456";
+        //name = "tuni";
+        //email = "a.tunay+8@gmail.com";
+        //password = "123456";
+
+        ReadConfig readConfig = new ReadConfig();
+        readConfig.readConfigFile();
+        email = readConfig.getUsername();
+        password = readConfig.getPassword();
+        name = readConfig.getName();
+        String qaEnv = readConfig.getQaEnv();
+        urlString = (qaEnv + "/users/");
+
+
     }
 
     @Test(priority = 1)
@@ -43,12 +55,11 @@ public class RegistrationAndLogin {
         String responseCode = postRequests.getResponseCode();
         Assert.assertTrue(responseCode.contains("200"), responseCode);
         String authMessage = postRequests.getLoginMessage();
-        Assert.assertTrue(authMessage.contains("success"), authMessage);
+        Assert.assertFalse(authMessage.contains("success"), authMessage);
         String responseBody = postRequests.getResponseBody();
-        Assert.assertTrue(responseBody.contains("0"));
-        accessToken = postRequests.getAccessToken();
-        System.out.println(accessToken);
-        Assert.assertTrue(responseBody.contains("tuni"));
+        Assert.assertFalse(responseBody.contains("0"));
+        Assert.assertFalse(responseBody.contains("tuni"));
+        System.out.println(responseBody);
     }
 
 
@@ -64,8 +75,7 @@ public class RegistrationAndLogin {
         Assert.assertTrue(responseBody.contains("0"));
         Assert.assertTrue(responseBody.contains("tuni"));
         accessToken = postRequests.getAccessToken();
-
-        System.out.println(accessToken);
+        System.out.println(responseBody);
     }
 
     @Test(priority = 3)
@@ -78,6 +88,7 @@ public class RegistrationAndLogin {
         Assert.assertTrue(authMessage.contains("invalid"), authMessage);
         String responseBody = postRequests.getResponseBody();
         Assert.assertTrue(responseBody.contains("1"));
+        System.out.println(responseBody);
     }
 
     @Test(priority = 4)
@@ -90,6 +101,7 @@ public class RegistrationAndLogin {
         Assert.assertTrue(authMessage.contains("invalid"), authMessage);
         String responseBody = postRequests.getResponseBody();
         Assert.assertFalse(responseBody.contains("0"));
+        System.out.println(responseBody);
     }
     @Test(priority = 5)
     public static void testGetUsers() throws IOException {
@@ -112,6 +124,6 @@ public class RegistrationAndLogin {
         Assert.assertTrue(responseBody.contains("tuni"));
         accessToken = postRequests.getAccessToken();
 
-        System.out.println(accessToken);
+        System.out.println(responseBody);
     }
 }

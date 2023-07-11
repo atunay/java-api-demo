@@ -1,6 +1,7 @@
 {
   "baseUrl": "http://restapi.adequateshop.com",
   "QA-env": "http://restapi.adequateshop.com/api",
-  "username": "a.tunay+2@gmail.com",
-  "password": "123456"
+  "username": "a.tunay+8@gmail.com",
+  "password": "123456",
+  "name": "Tuni"
 }

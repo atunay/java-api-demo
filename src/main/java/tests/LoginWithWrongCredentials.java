@@ -1,6 +1,7 @@
 package tests;
 
 import api.PostRequestsLogIn;
+import helpers.ReadConfig;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -13,8 +14,13 @@ public class LoginWithWrongCredentials {
 
     @BeforeTest
     public static void credentials() {
-        email = "a.tunay+8@gmail.com";
-        password = "123456";
+        //email = "a.tunay+8@gmail.com";
+        //password = "123456";
+
+        ReadConfig readConfig = new ReadConfig();
+        readConfig.readConfigFile();
+        email = readConfig.getUsername();
+        password = readConfig.getPassword();
     }
 
     @Test
@@ -27,5 +33,6 @@ public class LoginWithWrongCredentials {
         Assert.assertFalse(authMessage.contains("invalid"), authMessage);
         String responseBody = postRequests.getResponseBody();
         Assert.assertTrue(responseBody.contains("1"));
+        System.out.println(responseBody);
     }
 }

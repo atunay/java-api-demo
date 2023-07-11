@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cefb9b07-897e-4951-8c48-f9b771f0babe" name="Changes" comment="Trying dynamically set accessToken and ID arguments unsuccessfully.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tests/LoginAndGetUsersDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tests/LoginWithCorrectCredentials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tests/LoginWithWrongCredentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cefb9b07-897e-4951-8c48-f9b771f0babe" name="Changes" comment="Separate classes for the tests and some enhancement for the config.json">
+      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/ConfigData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/AccessTokenHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/AccessTokenHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/api/GetRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/GetRequests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/api/GetRequestsByID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/GetRequestsByID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/IDHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/IDHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/api/PostRequestSignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/PostRequestSignUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/api/PostRequestsLogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/PostRequestsLogIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helpers/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helpers/JsonParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/helpers/ReadConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helpers/ReadConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/LoginAndGetUsersDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/LoginAndGetUsersDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/LoginWithCorrectCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/LoginWithCorrectCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/LoginWithWrongCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/LoginWithWrongCredentials.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tests/RegistrationAndLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/RegistrationAndLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,13 +77,13 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ReadConfig">
-    <configuration name="ReadConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="helpers.ReadConfig" />
+  <component name="RunManager" selected="Application.GetRequests">
+    <configuration name="GetRequests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="api.GetRequests" />
       <module name="java-api-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="helpers.*" />
+          <option name="PATTERN" value="api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,7 +91,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginAndGetUsersDetails" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginAndGetUsersDetails.testGetUsers" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-api-demo" />
       <extension name="coverage">
         <pattern>
@@ -102,14 +101,15 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.LoginAndGetUsersDetails" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="testGetUsers" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginWithCorrectCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginWithCorrectCredentials.testSuccessfulLogin" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-api-demo" />
       <extension name="coverage">
         <pattern>
@@ -119,31 +119,15 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.LoginWithCorrectCredentials" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="testSuccessfulLogin" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginWithWrongCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="java-api-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LoginWithWrongCredentials" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegistrationAndLogin.testGetUsers" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="RegistrationAndLogin" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-api-demo" />
       <extension name="coverage">
         <pattern>
@@ -153,7 +137,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.RegistrationAndLogin" />
-      <option name="METHOD_NAME" value="testGetUsers" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistrationAndLogin.testSuccessfulSignUp" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java-api-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegistrationAndLogin" />
+      <option name="METHOD_NAME" value="testSuccessfulSignUp" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -163,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ReadConfig" />
-        <item itemvalue="TestNG.LoginAndGetUsersDetails" />
-        <item itemvalue="TestNG.LoginWithWrongCredentials" />
-        <item itemvalue="TestNG.LoginWithCorrectCredentials" />
-        <item itemvalue="TestNG.RegistrationAndLogin.testGetUsers" />
+        <item itemvalue="Application.GetRequests" />
+        <item itemvalue="TestNG.LoginAndGetUsersDetails.testGetUsers" />
+        <item itemvalue="TestNG.LoginWithCorrectCredentials.testSuccessfulLogin" />
+        <item itemvalue="TestNG.RegistrationAndLogin" />
+        <item itemvalue="TestNG.RegistrationAndLogin.testSuccessfulSignUp" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1685805719345</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Separate classes for the tests and some enhancement for the config.json">
+      <option name="closed" value="true" />
+      <created>1688914345188</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688914345188</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,6 +315,7 @@
     <MESSAGE value="Reconstructed project from assignment." />
     <MESSAGE value="Some enhancement for better viewing." />
     <MESSAGE value="Trying dynamically set accessToken and ID arguments unsuccessfully." />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying dynamically set accessToken and ID arguments unsuccessfully." />
+    <MESSAGE value="Separate classes for the tests and some enhancement for the config.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separate classes for the tests and some enhancement for the config.json" />
   </component>
 </project>
