@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cefb9b07-897e-4951-8c48-f9b771f0babe" name="Changes" comment="Refactoring and enhancement of the code:&#10;1. Adding one more field in config.json&#10;2. Refactoring of ReadConfig class&#10;3. Replacing the hardcode arguments with Get methods adhere to the DRY principle&#10;4. Refactoring the *.Holder classes.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cefb9b07-897e-4951-8c48-f9b771f0babe" name="Changes" comment="Update pom.xml">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_07_23____14_03____Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_07_23_г_,_14_03_ч__[Changes]/shelved.patch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +231,23 @@
       <option name="project" value="LOCAL" />
       <updated>1689085615279</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update Jenkinsfile">
+      <option name="closed" value="true" />
+      <created>1690110288213</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690110288213</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update pom.xml">
+      <option name="closed" value="true" />
+      <created>1690110600812</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690110600812</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,6 +334,8 @@
     <MESSAGE value="Separate classes for the tests and some enhancement for the config.json" />
     <MESSAGE value="Refactoring and enhancement of the code:&#10;1. Adding one more field in config.json&#10;2. Refactoring of ReadConfig class&#10;3. Replacing the hardcode arguments with Get methods adhere to the DRY principle" />
     <MESSAGE value="Refactoring and enhancement of the code:&#10;1. Adding one more field in config.json&#10;2. Refactoring of ReadConfig class&#10;3. Replacing the hardcode arguments with Get methods adhere to the DRY principle&#10;4. Refactoring the *.Holder classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring and enhancement of the code:&#10;1. Adding one more field in config.json&#10;2. Refactoring of ReadConfig class&#10;3. Replacing the hardcode arguments with Get methods adhere to the DRY principle&#10;4. Refactoring the *.Holder classes." />
+    <MESSAGE value="Update Jenkinsfile" />
+    <MESSAGE value="Update pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update pom.xml" />
   </component>
 </project>
