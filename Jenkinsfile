@@ -4,31 +4,39 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the source code from the Git repository
-                git 'https://github.com/atunay/java-api-demo.git'
+                // Clone the source code from the local directory (use your local path)
+                dir('/home/tunay/java-api-demo') {
+                    // Replace 'your-project-directory' with the path to your cloned project
+                    git url: 'https://github.com/atunay/java-api-demo.git', branch: 'master'
+                }
             }
         }
 
         stage('Build') {
             steps {
                 // Build the project using Maven
-                sh 'mvn clean package'
+                dir('/home/tunay/java-api-demo') {
+                    // Replace 'your-project-directory' with the path to your cloned project
+                    sh 'mvn clean package'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                // Run the test suite using Maven
-                sh 'mvn test'
+                // Run the test suite using TestNG
+                dir('/home/tunay/java-api-demo') {
+                    // Replace 'your-project-directory' with the path to your cloned project
+                    sh 'mvn test'
+                }
             }
         }
 
         stage('Archive Test Results') {
             steps {
                 // Archive test reports for Jenkins to display
-                junit 'target/surefire-reports/*.xml'
+                junit '/home/tunay/java-api-demo/target/surefire-reports/*.xml'
             }
         }
     }
 }
-
