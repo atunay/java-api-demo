@@ -26,7 +26,7 @@ pipeline {
         stage('Archive Test Results') {
             steps {
                 // Archive test reports for Jenkins to display
-                testng 'target/surefire-reports/*.xml'
+                junit 'target/surefire-reports/*.xml'
             }
         }
     }
