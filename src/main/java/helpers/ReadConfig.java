@@ -31,12 +31,10 @@ import java.util.Scanner; // Import the Scanner class to read text files
             File myObj = new File(sourceFile);
             Scanner myReader = new Scanner(myObj);
             StringBuilder jsonContent = new StringBuilder(); //new
-            //int i = 0;
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 jsonContent.append(data); //new
-               // i = i + 1;
-                //System.out.println(i + " " + data);
+
                 System.out.println(data);
             }
             myReader.close();
